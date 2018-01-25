@@ -29,7 +29,7 @@ public class customerDAO implements customerDAOinterface{
     }
     //存檔
     public void saveFile(){
-        File f= new File(context.getFilesDir(),"MasterData.txt");
+        File f= new File(context.getFilesDir(),"VIPData.txt");
         FileWriter fw=null;
         try {
             fw=new FileWriter(f);
@@ -45,7 +45,7 @@ public class customerDAO implements customerDAOinterface{
     //讀檔
     public void loadFile(){
 
-        File f=new File(context.getFilesDir(),"MasterData.txt");
+        File f=new File(context.getFilesDir(),"VIPData.txt");
         FileReader fr=null;
 
         try {
@@ -53,7 +53,7 @@ public class customerDAO implements customerDAOinterface{
             BufferedReader br=new BufferedReader(fr);
             String str=br.readLine();
             Gson gson=new Gson();
-            mylist=gson.fromJson(str,new TypeToken<ArrayList<master>>(){}.getType());
+            mylist=gson.fromJson(str,new TypeToken<ArrayList<customer>>(){}.getType());
             br.close();
             fr.close();
         } catch (IOException e) {

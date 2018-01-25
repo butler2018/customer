@@ -19,7 +19,7 @@ public class CustomerBasicData extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_master_basic_data);
+        setContentView(R.layout.activity_customer_basic_data);
         lv=(ListView)findViewById(R.id.listView);
         Myadaptor adapter=new Myadaptor();
         lv.setAdapter(adapter);

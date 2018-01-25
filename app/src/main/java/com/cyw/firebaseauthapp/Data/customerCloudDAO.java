@@ -28,7 +28,7 @@ public customerCloudDAO(Context context) {
             this.context = context;
             mylist = new ArrayList<>();
             database = FirebaseDatabase.getInstance();
-            myRef = database.getReference("masterData");
+            myRef = database.getReference("VIPData");
 
             myRef.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -101,8 +101,6 @@ public customerCloudDAO(Context context) {
                 t.name = s.name;
                 t.password = s.password;
                 t.store=s.store;
-             //   t.bankcode=s.bankcode;
-             //   t.accountNumber=s.accountNumber;
                 saveFile();
                 return true;
             }

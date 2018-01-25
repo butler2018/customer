@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.cyw.firebaseauthapp.Data.customer;
-import com.cyw.firebaseauthapp.Data.master;
 
 //註冊畫面
 public class RegisterActivity extends AppCompatActivity {

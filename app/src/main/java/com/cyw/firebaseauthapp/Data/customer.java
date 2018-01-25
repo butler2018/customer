@@ -10,8 +10,7 @@ public class customer {
     public String name;
     public String password;
     public String store;
-//    public String bankcode;
-//    public String accountNumber;
+
 
     public customer(String id, String name, String password, String store)
     {
@@ -19,8 +18,7 @@ public class customer {
         this.name=name;
         this.password=password;
         this.store=store;
-//        this.bankcode=bankcode;
-//        this.accountNumber=accountNumber;
+
     }
 
 

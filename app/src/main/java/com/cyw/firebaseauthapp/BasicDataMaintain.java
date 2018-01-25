@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class BasicDataMaintain extends AppCompatActivity {
 
     TextView mdid;
-    EditText mdname,mdstore;//mdbankcode,mdbankaccount;
+    EditText mdname,mdstore;
     Button mdsubmit;
     String ID;
     @Override
@@ -26,8 +26,7 @@ public class BasicDataMaintain extends AppCompatActivity {
         mdid=(TextView)findViewById(R.id.pwdid);
         mdname =(EditText) findViewById(R.id.mdName);
         mdstore =(EditText) findViewById(R.id.mdstore);
-      //  mdbankcode =(EditText) findViewById(R.id.mdbankcode);
-      //  mdbankaccount =(EditText) findViewById(R.id.mdbankaccount);
+
 
         SharedPreferences sp = getSharedPreferences("basicdata", MODE_PRIVATE);
         ID = sp.getString("id", "");
@@ -35,8 +34,7 @@ public class BasicDataMaintain extends AppCompatActivity {
         mdname.setText(MainActivity.dao.getCustomer(ID).name.toString());
         mdstore.setText(MainActivity.dao.getCustomer(ID).store.toString());
 
-    //    mdbankcode.setText(MainActivity.dao.getcustomer(ID).bankcode.toString());
-    //    mdbankaccount.setText(MainActivity.dao.getcustomer(ID).accountNumber.toString());
+
 
         mdsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,8 +48,7 @@ public class BasicDataMaintain extends AppCompatActivity {
                         MainActivity.dao.getCustomer(ID).name=mdname.getText().toString();
                         MainActivity.dao.getCustomer(ID).store=mdstore.getText().toString();
 
-//                        MainActivity.dao.getcustomer(ID).bankcode=mdbankcode.getText().toString();
-//                        MainActivity.dao.getcustomer(ID).accountNumber=mdbankaccount.getText().toString();
+
 
                         MainActivity.dao.saveFile();
                         Toast.makeText(BasicDataMaintain.this, "更新完成", Toast.LENGTH_SHORT).show();

@@ -13,19 +13,13 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/masterData"
+            android:id="@+id/customerData"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="師父資料"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-        <Button
-            android:id="@+id/store"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="分店資訊" />
     </LinearLayout>
 
     <LinearLayout
