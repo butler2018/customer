@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cyw.firebaseauthapp.BasicDataMaintainPWD">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="帳號(手機號碼)"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/pwdid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textView4"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/oldpwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/pwdid"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="請輸入舊密碼"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/newpwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/pwdsubmit"
+        android:layout_below="@+id/oldpwd"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="請輸入新密碼"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/pwdsubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/oldpwd"
+        android:layout_below="@+id/newpwd"
+        android:layout_marginTop="20dp"
+        android:text="修改" />
+</RelativeLayout>
