@@ -3,11 +3,11 @@ package com.cyw.firebaseauthapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class NewOrder extends AppCompatActivity {
+public class Open2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_order);
+        setContentView(R.layout.activity_open2);
     }
 }

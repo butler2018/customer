@@ -44,12 +44,12 @@
         <activity android:name=".BaiscDataMaintainPWD" />
         <activity android:name=".BasicDataMaintainPWD" />
         <activity android:name=".OrderActivity" />
-        <activity android:name=".NewOrder" />
         <activity android:name=".WaitingMoney" />
         <activity android:name=".OpenOrder" />
         <activity android:name=".ClosedOrder" />
         <activity android:name=".CustomerActivity" />
-        <activity android:name=".CustomerBasicData"></activity>
+        <activity android:name=".CustomerBasicData" />
+        <activity android:name=".Open2Activity"></activity>
     </application>
 
 </manifest>

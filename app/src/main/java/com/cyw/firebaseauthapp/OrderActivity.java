@@ -14,12 +14,13 @@ import android.widget.TextView;
 public class OrderActivity extends AppCompatActivity {
 
     ListView lv;
-    String[] str= {"新訂單","待儲值訂單","未結訂單","已結訂單"};
+    String[] str= {"待儲值訂單","未結訂單","已結訂單"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+
         lv=(ListView)findViewById(R.id.listView);
         OrderActivity.Myadaptor adapter=new OrderActivity.Myadaptor();
         lv.setAdapter(adapter);
@@ -29,19 +30,16 @@ public class OrderActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i)
                 {
+
                     case 0:
-                        Intent it1=new Intent(OrderActivity.this,NewOrder.class);
-                        startActivity(it1);
-                        break;
-                    case 1:
                         Intent it2=new Intent(OrderActivity.this,WaitingMoney.class);
                         startActivity(it2);
                         break;
-                    case 2:
+                    case 1:
                         Intent it3=new Intent(OrderActivity.this,OpenOrder.class);
                         startActivity(it3);
                         break;
-                    case 3:
+                    case 2:
                         Intent it4=new Intent(OrderActivity.this,ClosedOrder.class);
                         startActivity(it4);
                         break;

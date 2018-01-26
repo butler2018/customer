@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cyw.firebaseauthapp.Open2Activity">
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginTop="12dp"
+        android:layout_toStartOf="@+id/textView31"
+        android:textSize="20sp"
+        tools:text="訂單編號" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/textView15"
+        android:layout_alignBottom="@+id/textView15"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="17dp"
+        android:text="TextView"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/textView15"
+        android:layout_below="@+id/textView15"
+        android:layout_marginTop="27dp"
+        android:text="師傅:"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/textView31"
+        android:layout_alignTop="@+id/textView32"
+        android:text="TextView"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/textView32"
+        android:layout_below="@+id/textView32"
+        android:layout_marginTop="32dp"
+        android:text="療程:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/textView33"
+        android:layout_alignTop="@+id/textView34"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_alignEnd="@+id/textView34"
+        android:layout_below="@+id/textView34"
+        android:layout_marginTop="23dp"
+        android:text="日期:"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/textView35"
+        android:layout_alignTop="@+id/textView36"
+        android:text="TextView"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/textView36"
+        android:layout_below="@+id/textView36"
+        android:layout_marginTop="30dp"
+        android:text="金額:"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_alignEnd="@+id/textView37"
+        android:layout_alignTop="@+id/textView38"
+        android:text="TextView"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/textView38"
+        android:layout_below="@+id/textView38"
+        android:layout_marginTop="24dp"
+        android:text="匯款編號:"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/textView39"
+        android:layout_alignTop="@+id/textView40"
+        android:text="TextView"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/textView40"
+        android:layout_below="@+id/textView40"
+        android:layout_marginTop="16dp"
+        android:text="匯款銀行:"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/textView42"
+        android:layout_alignBottom="@+id/textView42"
+        android:layout_alignStart="@+id/textView41"
+        android:text="TextView"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/textView42"
+        android:layout_below="@+id/textView42"
+        android:layout_marginTop="11dp"
+        android:text="匯款期限:"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/textView44"
+        android:layout_alignBottom="@+id/textView44"
+        android:layout_alignStart="@+id/textView43"
+        android:text="TextView"
+        android:textSize="20sp"/>
+
+</RelativeLayout>
