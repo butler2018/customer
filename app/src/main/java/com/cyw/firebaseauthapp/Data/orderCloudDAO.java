@@ -20,15 +20,15 @@ import java.util.ArrayList;
 public class orderCloudDAO implements orderDAOinterface {
 
         public Context context;
-        public ArrayList<customer> mylist;
+        public ArrayList<order> mylist1;
         FirebaseDatabase database;
         DatabaseReference myRef;
 
-public orderCloudDAO(Context context) {
+public orderCloudDAO(final Context context) {
             this.context = context;
-            mylist = new ArrayList<>();
+            mylist1 = new ArrayList<>();
             database = FirebaseDatabase.getInstance();
-            myRef = database.getReference("OrderData");
+            myRef = database.getReference("orderData");
 
             myRef.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -37,11 +37,11 @@ public orderCloudDAO(Context context) {
                     // whenever data at this location is updated.
                     String value = dataSnapshot.getValue(String.class);
                     Gson gson = new Gson();
-                    if (mylist == null)
+                    if (mylist1 == null)
                     {
-                        mylist = new ArrayList<>();
+                        mylist1 = new ArrayList<>();
                     }
-                    mylist = gson.fromJson(value, new TypeToken<ArrayList<customer>>(){}.getType());
+                    mylist1 = gson.fromJson(value, new TypeToken<ArrayList<order>>(){}.getType());
                 }
                 @Override
                 public void onCancelled(DatabaseError error) {
@@ -54,35 +54,76 @@ public orderCloudDAO(Context context) {
     public void saveFile(){
         // Write a message to the database
         Gson gson = new Gson();
-        String data = gson.toJson(mylist);
+        String data = gson.toJson(mylist1);
         Log.d("Here", "saveFile"+data);
         myRef.setValue(data);
     }
-
-
     @Override
     public boolean add(order s) {
-        return false;
+        if (mylist1 == null)
+        {
+            mylist1 = new ArrayList<>();
+        }
+
+        mylist1.add(s);
+//        Log.d("Hereadd", "saveFile"+String.valueOf(s.id));
+
+        saveFile();
+        return true;
     }
+
+
+
 
     @Override
     public ArrayList<order> getList() {
+        return mylist1;
+    }
+
+    @Override
+    public order getCustomer(String id) {
+        for (order s : mylist1)
+        {
+            if (s.customerId.equals(id))
+            {
+                return s;
+            }
+        }
         return null;
     }
 
-    @Override
-    public customer getCustomerId(String id) {
-        return null;
-    }
 
     @Override
-    public boolean update(customer s) {
-        return false;
-    }
+    public boolean update(order s)
+    {
+            for (order t : mylist1)
+            {
+                if (t.customerId.equals(s.customerId)) {
+                    t.balanceTimes = s.balanceTimes;
+                    //          t.password = s.password;
+                    //       t.store=s.store;
+                    saveFile();
+                    return true;
+                }
+            }
+            return false;
+        }
 
-    @Override
-    public boolean delete(String id) {
-        return false;
-    }
-}
+//        @Override
+//        public boolean delete(String id)
+//
+//    {
+//        for (order s : mylist1)
+//        {
+//            if (s.customerId.equals(id))
+//            {
+//                mylist1.remove(s);
+//                saveFile();
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 
+
+    }

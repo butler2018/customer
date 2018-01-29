@@ -49,7 +49,10 @@
         <activity android:name=".ClosedOrder" />
         <activity android:name=".CustomerActivity" />
         <activity android:name=".CustomerBasicData" />
-        <activity android:name=".Open2Activity"></activity>
+        <activity android:name=".Open2Activity" />
+        <activity android:name=".AddtestActivity" />
+        <activity android:name=".Waiting2Money" />
+        <activity android:name=".Closed2Order"></activity>
     </application>
 
 </manifest>

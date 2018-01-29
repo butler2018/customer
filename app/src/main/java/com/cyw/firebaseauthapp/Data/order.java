@@ -1,37 +1,42 @@
 package com.cyw.firebaseauthapp.Data;
 
-import java.io.StringBufferInputStream;
-
 /**
- * Created by vivian on 2018/1/26.
+ * Created by vivian on 2018/1/25.
  */
 
-public class order {
-   String orderId;
-   String customerId;
-   String masterId;
-   String programName;
-   String transferTime;
-   String transferMoney;
-   String confirmTransferMoney;
-   String balance;
-   String customerfeedback;
+public class order{
 
-   public void order(String orderId,String customerId,String masterId,String programName, String transferTime,String transferMoney,
-           String confirmTransferMoney,String balance,String customerfeedback){
-          this.orderId = orderId;
-          this.customerId = customerId;
-          this.masterId = masterId;
-          this.programName = programName;
-          this.transferTime = transferTime;
-          this.transferMoney = transferMoney;
-          this.confirmTransferMoney=confirmTransferMoney;
-          this.customerfeedback=customerfeedback;
-          this.balance = balance;
+    public String customerId;
+    public String balanceTimes;
+    public String programName;
+    public String price;
+    public String customerfeedback;
+    public String deadline;
+    public String masterId;
+    public String orderId;
+    public String transferMoney;
+    public String transferTime;
 
+
+
+    public order(String customerId, String balanceTimes, String programName, String price
+                 ,String customerfeedback,String deadline,String masterId,String orderId,
+                 String transferMoney,String transferTime)
+    {
+        this.customerId=customerId;
+        this.balanceTimes=balanceTimes;
+        this.programName=programName;
+        this.price=price;
+        this.customerfeedback=customerfeedback;
+        this.deadline=deadline;
+        this.masterId=masterId;
+        this.orderId=orderId;
+        this.transferMoney=transferMoney;
+        this.transferTime=transferTime;
 
     }
 
 
 
 }
+

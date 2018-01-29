@@ -1,51 +1,59 @@
 package com.cyw.firebaseauthapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.cyw.firebaseauthapp.Data.customer;
-
-import org.w3c.dom.Text;
+import com.cyw.firebaseauthapp.Data.order;
 
 import java.util.ArrayList;
 
 public class OpenOrder extends AppCompatActivity {
     ListView lv;
+    String ID;
+    int bt = 0;
+    int bt1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_order);
         lv = (ListView) findViewById(R.id.openlistView);
+        //取得ID
+        SharedPreferences sp = getSharedPreferences("basicdata", MODE_PRIVATE);
+        ID = sp.getString("id", "");
     }
+
     @Override
     protected void onResume() {   //回此頁顯示項目
         super.onResume();
-        ArrayList<String> customerId = new ArrayList<>(); // 讀陣列
-        for (customer s : MainActivity.dao.getList()) {
-            customerId.add(s.id);
+        ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
+        for (order s : MainActivity.odao.getList()) {
+            if(ID.equals(s.customerId)&& ((bt1 = Integer.valueOf(s.balanceTimes))> bt)) {
+                studentNames.add(s.orderId);
+            }
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(OpenOrder.this
-                , android.R.layout.simple_list_item_1, customerId);
+                , android.R.layout.simple_list_item_1,studentNames );
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent it = new Intent(OpenOrder.this, Open2Activity.class);
+                Intent it = new Intent(OpenOrder.this,Open2Activity.class);
                 it.putExtra("id", MainActivity.dao.getList().get(position).id);
                 startActivity(it);
             }
         });
-
-
     }
+
 }
+
+
+
+

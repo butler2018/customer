@@ -13,12 +13,12 @@
         android:layout_alignParentTop="true"
         android:layout_marginEnd="19dp"
         android:layout_marginTop="12dp"
-        android:layout_toStartOf="@+id/textView31"
+        android:layout_toStartOf="@+id/textViewOid"
         android:textSize="20sp"
         tools:text="訂單編號" />
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/textViewOid"
         android:layout_width="230dp"
         android:layout_height="40dp"
         android:layout_alignBaseline="@+id/textView15"
@@ -39,10 +39,10 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/textViewMid"
         android:layout_width="230dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/textView31"
+        android:layout_alignStart="@+id/textViewOid"
         android:layout_alignTop="@+id/textView32"
         android:text="TextView"
         android:textSize="20sp"/>
@@ -58,10 +58,10 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/textViewPn "
         android:layout_width="230dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/textView33"
+        android:layout_alignStart="@+id/textViewMid"
         android:layout_alignTop="@+id/textView34"
         android:textSize="20sp"/>
 
@@ -75,10 +75,10 @@
         android:text="日期:"
         android:textSize="20sp"/>
     <TextView
-        android:id="@+id/textView37"
+        android:id="@+id/textViewT"
         android:layout_width="230dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/textView35"
+        android:layout_alignStart="@+id/textViewPn "
         android:layout_alignTop="@+id/textView36"
         android:text="TextView"
         android:textSize="20sp"/>
@@ -94,10 +94,10 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/textView39"
+        android:id="@+id/textViewPr"
         android:layout_width="230dp"
         android:layout_height="40dp"
-        android:layout_alignEnd="@+id/textView37"
+        android:layout_alignEnd="@+id/textViewT"
         android:layout_alignTop="@+id/textView38"
         android:text="TextView"
         android:textSize="20sp"/>
@@ -113,10 +113,10 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/textView41"
+        android:id="@+id/textViewAn"
         android:layout_width="230dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/textView39"
+        android:layout_alignStart="@+id/textViewPr"
         android:layout_alignTop="@+id/textView40"
         android:text="TextView"
         android:textSize="20sp"/>
@@ -132,12 +132,12 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/textView43"
+        android:id="@+id/textViewAb"
         android:layout_width="230dp"
         android:layout_height="40dp"
         android:layout_alignBaseline="@+id/textView42"
         android:layout_alignBottom="@+id/textView42"
-        android:layout_alignStart="@+id/textView41"
+        android:layout_alignStart="@+id/textViewAn"
         android:text="TextView"
         android:textSize="20sp"/>
 
@@ -152,13 +152,13 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/textView45"
+        android:id="@+id/textViewDl"
         android:layout_width="230dp"
         android:layout_height="40dp"
         android:layout_alignBaseline="@+id/textView44"
         android:layout_alignBottom="@+id/textView44"
-        android:layout_alignStart="@+id/textView43"
+        android:layout_alignStart="@+id/textViewAb"
         android:text="TextView"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
 </RelativeLayout>

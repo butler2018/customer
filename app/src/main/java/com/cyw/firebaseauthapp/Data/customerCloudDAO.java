@@ -24,7 +24,7 @@ public class customerCloudDAO implements customerDAOinterface {
         FirebaseDatabase database;
         DatabaseReference myRef;
 
-public customerCloudDAO(Context context) {
+public customerCloudDAO(final Context context) {
             this.context = context;
             mylist = new ArrayList<>();
             database = FirebaseDatabase.getInstance();
@@ -91,6 +91,11 @@ public customerCloudDAO(Context context) {
         }
         return null;
     }
+
+
+
+
+
 
     @Override
     public boolean update(customer s) {

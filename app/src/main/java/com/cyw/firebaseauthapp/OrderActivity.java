@@ -16,6 +16,15 @@ public class OrderActivity extends AppCompatActivity {
     ListView lv;
     String[] str= {"待儲值訂單","未結訂單","已結訂單"};
 
+
+    String OrderId ;
+    String MasterId;
+    String programNam;
+    String times;
+    String price;
+    String accountNumber ;
+    String accountBank ;
+    String deadLine;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +87,11 @@ public class OrderActivity extends AppCompatActivity {
 
         }
     }
-
+    public void clickTest(View v)
+    {
+        Intent it = new Intent(OrderActivity.this, AddtestActivity.class);
+        startActivity(it);
+    }
     @Override
     protected void onResume() {
         super.onResume();
