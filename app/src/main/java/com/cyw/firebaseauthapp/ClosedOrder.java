@@ -9,15 +9,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.cyw.firebaseauthapp.Data.order;
+import com.cyw.firebaseauthapp.order.order;
 
 import java.util.ArrayList;
 
 public class ClosedOrder extends AppCompatActivity {
     ListView lv;
     String ID;
-    int bt = 0;
-    int bt1;
+    String Mode = "CLOSED_ORDER";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,12 +28,13 @@ public class ClosedOrder extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences("basicdata", MODE_PRIVATE);
         ID = sp.getString("id", "");
     }
+
     @Override
     protected void onResume() {   //回此頁顯示項目
         super.onResume();
         ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
         for (order s : MainActivity.odao.getList()) {
-            if(ID.equals(s.customerId)&& ((bt1 = Integer.valueOf(s.balanceTimes))==bt)) {
+            if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
                 studentNames.add(s.orderId);
             }
         }
@@ -44,12 +45,13 @@ public class ClosedOrder extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Intent it = new Intent(ClosedOrder.this,Closed2Order.class);
-                it.putExtra("id", MainActivity.dao.getList().get(position).id);
+                it.putExtra("OrderId", MainActivity.odao.getList().get(position).orderId);
                 startActivity(it);
             }
         });
     }
 
 }
+
 
 

@@ -9,15 +9,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.cyw.firebaseauthapp.Data.customer;
-import com.cyw.firebaseauthapp.Data.orderCloudDAO;
-import com.cyw.firebaseauthapp.Data.order;
+import com.cyw.firebaseauthapp.order.order;
 
 import java.util.ArrayList;
 
 public class WaitingMoney extends AppCompatActivity {
     String ID;
-    String Money = "0";
+    String Mode = "WAIT_TRANSFER";
     ListView lv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +33,7 @@ public class WaitingMoney extends AppCompatActivity {
         super.onResume();
         ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
         for (order s : MainActivity.odao.getList()) {
-            if(ID.equals(s.customerId)&&Money.equals(s.transferMoney)) {
+            if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
                 studentNames.add(s.orderId);
             }
         }
@@ -45,14 +43,16 @@ public class WaitingMoney extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent it = new Intent(WaitingMoney.this, Waiting2Money.class);
-                it.putExtra("id", MainActivity.dao.getList().get(position).id);
+                Intent it = new Intent(WaitingMoney.this,Waiting2Money.class);
+                it.putExtra("OrderId", MainActivity.odao.getList().get(position).orderId);
                 startActivity(it);
             }
         });
     }
 
-
-
-
 }
+
+
+
+
+

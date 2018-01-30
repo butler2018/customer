@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.cyw.firebaseauthapp.Data.DBtype;
 import com.cyw.firebaseauthapp.Data.customerCloudDAO;
-import com.cyw.firebaseauthapp.Data.orderCloudDAO;
+import com.cyw.firebaseauthapp.order.orderCloudDAO;
 
 //登入至師父主畫面(MasterActivity),及註冊按鈕至(RegisterActity)
 public class MainActivity extends AppCompatActivity {

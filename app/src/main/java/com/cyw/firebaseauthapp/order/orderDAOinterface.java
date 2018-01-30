@@ -1,4 +1,4 @@
-package com.cyw.firebaseauthapp.Data;
+package com.cyw.firebaseauthapp.order;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public interface orderDAOinterface {
     //抓取物件陣列
     public ArrayList<order> getList();
     //抓取一個物件
-    public order getCustomer(String id);
+    public order getOrder(String id);
     //更新一個物件
     public boolean update(order s);
     //刪除一個物件

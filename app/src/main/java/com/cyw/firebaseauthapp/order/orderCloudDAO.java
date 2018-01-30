@@ -1,4 +1,4 @@
-package com.cyw.firebaseauthapp.Data;
+package com.cyw.firebaseauthapp.order;
 
 import android.content.Context;
 import android.util.Log;
@@ -81,10 +81,11 @@ public orderCloudDAO(final Context context) {
     }
 
     @Override
-    public order getCustomer(String id) {
+    public order getOrder(String id) {
+
         for (order s : mylist1)
         {
-            if (s.customerId.equals(id))
+            if (s.orderId.equals(id))
             {
                 return s;
             }
