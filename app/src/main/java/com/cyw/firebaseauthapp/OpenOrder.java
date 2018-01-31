@@ -37,7 +37,7 @@ public class OpenOrder extends AppCompatActivity {
     protected void onResume() {   //回此頁顯示項目
         super.onResume();
 
-        ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
+        ArrayList<String> studentNames = new ArrayList<String>();
         for (order o : MainActivity.odao.getList()) {
            // if(ID.equals(s.customerId)&& (s.flag.equals(flag.OPEN_ORDER))) {
             if(ID.equals(o.customerId)&& (flag.OPEN_ORDER.equals(o.flag))) {
