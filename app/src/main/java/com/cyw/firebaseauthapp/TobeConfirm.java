@@ -38,14 +38,14 @@ public class TobeConfirm extends AppCompatActivity {
         super.onResume();
         ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
         for (order s : MainActivity.odao.getList()) {
-            // if(ID.equals(s.customerId)&& (s.flag.equals(flag.OPEN_ORDER))) {
-            if(ID.equals(s.customerId)&& (flag.TO_BE_CONFIRM.equals(s.flag))) {
+            if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
+          //  if(ID.equals(s.customerId)&& (flag.TO_BE_CONFIRM.equals(s.flag))) {
                 studentNames.add(s.orderId);
                 check = 123;
             }
         }
         if(check != 123) {
-            tv = findViewById(R.id.opentextView);
+            tv = findViewById(R.id.tobetextView);
             tv.setText("未搜尋到訂單");
         }else
         {
@@ -55,7 +55,7 @@ public class TobeConfirm extends AppCompatActivity {
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                    Intent it = new Intent(TobeConfirm.this, Tobe2Confirm.class);
+                    Intent it = new Intent(TobeConfirm.this, Open2Activity.class);
 
                     it.putExtra("OrderId", MainActivity.odao.getList().get(position).orderId);
 

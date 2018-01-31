@@ -2,13 +2,14 @@ package com.cyw.firebaseauthapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.cyw.firebaseauthapp.order.order;
 
 public class Open2Activity extends AppCompatActivity {
     TextView tvOid,tvMid,tvPn,tvSt,tvBt;
-    order s;
+    order o;
     String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +22,13 @@ public class Open2Activity extends AppCompatActivity {
         tvBt = findViewById(R.id.textViewBt);
 
         id = getIntent().getStringExtra("OrderId");
-        s = MainActivity.odao.getOrder(id);
-        tvOid.setText(s.orderId);
-        tvMid.setText(s.masterId);
-        tvPn.setText(String.valueOf(s.programID));
-        tvSt.setText(String.valueOf(s.serviceTimes));
-        tvBt.setText(String.valueOf(s.balanceTimes));
+        o = MainActivity.odao.getOrder(id);
+        Log.d("id:",id);
+        tvOid.setText(o.orderId);
+        tvMid.setText(o.masterId);
+        tvPn.setText(String.valueOf(o.programID));
+        tvSt.setText(String.valueOf(o.serviceTimes));
+        tvBt.setText(String.valueOf(o.balanceTimes));
 
     }
 }

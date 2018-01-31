@@ -19,7 +19,7 @@ import java.util.Calendar;
 public class WaitingMoney_detail extends AppCompatActivity {
     TextView orderId_wmd,masterName_wmd,store_wmd,program_wmd,price_wmd,times_wmd,bankCode_wmd,bankAccount_wmd,deadline_wmd,VIPId_wmd,VIPName_wmd;
     Button payCash_wmd,deleteOrder_wmd;
-    String OID,MID;
+    String OID,MID,VIPId;
     order o;
     master m;
     customer v;
@@ -46,8 +46,8 @@ public class WaitingMoney_detail extends AppCompatActivity {
         OID=getIntent().getStringExtra("OrderId");
         o=MainActivity.odao.getOrder(OID); // orderData **
 
-//        SharedPreferences sp = getSharedPreferences("basicdata", MODE_PRIVATE);
-//        MID = sp.getString("id", "");
+        SharedPreferences sp = getSharedPreferences("basicdata", MODE_PRIVATE);
+        VIPId = sp.getString("id", "");
 
         m=MainActivity.mdao.getMaster(o.masterId); // masterData
         v=MainActivity.dao.getCustomer(o.customerId);  //VipData
@@ -61,7 +61,7 @@ public class WaitingMoney_detail extends AppCompatActivity {
         bankCode_wmd.setText(m.bankcode.toString());
         bankAccount_wmd.setText(m.accountNumber.toString());
         deadline_wmd.setText(o.deadline.toString());
-        VIPId_wmd.setText(v.id.toString());
+        VIPId_wmd.setText(VIPId.toString());
         VIPName_wmd.setText(v.name.toString());
 
 //        payCash_wmd.setOnClickListener(new View.OnClickListener() {

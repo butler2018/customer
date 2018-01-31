@@ -59,13 +59,13 @@ public orderCloudDAO(final Context context) {
         myRef.setValue(data);
     }
     @Override
-    public boolean add(order s) {
+    public boolean add(order o) {
         if (mylist1 == null)
         {
             mylist1 = new ArrayList<>();
         }
 
-        mylist1.add(s);
+        mylist1.add(o);
 //        Log.d("Hereadd", "saveFile"+String.valueOf(s.id));
 
         saveFile();
@@ -84,11 +84,11 @@ public orderCloudDAO(final Context context) {
     public order getOrder(String id) {
 
 
-        for (order s : mylist1)
+        for (order o : mylist1)
         {
-            if (s.orderId.equals(id))
+            if (o.orderId.equals(id))
             {
-                return s;
+                return o;
             }
         }
         return null;
@@ -108,12 +108,12 @@ public orderCloudDAO(final Context context) {
 
 
     @Override
-    public boolean update(order s)
+    public boolean update(order o)
     {
             for (order t : mylist1)
             {
-                if (t.customerId.equals(s.customerId)) {
-                    t.balanceTimes = s.balanceTimes;
+                if (t.customerId.equals(o.customerId)) {
+                    t.balanceTimes = o.balanceTimes;
                     //          t.password = s.password;
                     //       t.store=s.store;
                     saveFile();

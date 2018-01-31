@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -35,12 +36,14 @@ public class OpenOrder extends AppCompatActivity {
     @Override
     protected void onResume() {   //回此頁顯示項目
         super.onResume();
+
         ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
-        for (order s : MainActivity.odao.getList()) {
+        for (order o : MainActivity.odao.getList()) {
            // if(ID.equals(s.customerId)&& (s.flag.equals(flag.OPEN_ORDER))) {
-            if(ID.equals(s.customerId)&& (flag.OPEN_ORDER.equals(s.flag))) {
-                studentNames.add(s.orderId);
+            if(ID.equals(o.customerId)&& (flag.OPEN_ORDER.equals(o.flag))) {
+                studentNames.add(o.orderId);
                 check = 123;
+
             }
         }
         if(check != 123) {
@@ -50,6 +53,7 @@ public class OpenOrder extends AppCompatActivity {
             {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(OpenOrder.this
                     , android.R.layout.simple_list_item_1, studentNames);
+                Log.d("orderId:",studentNames);
             lv.setAdapter(adapter);
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
