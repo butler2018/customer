@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class WaitingMoney extends AppCompatActivity {
     String ID;
-    String Mode = "WAIT_TRANSFER";
+   // String Mode = "WAIT_TRANSFER";
     ListView lv;
     TextView tv;
     int check;
@@ -38,7 +38,7 @@ public class WaitingMoney extends AppCompatActivity {
         ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
         for (order s : MainActivity.odao.getList()) {
             //if(ID.equals(s.customerId)&& (flag.WAIT_TRANSFER.equals(s.flag))) {
-                if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
+                if(ID.equals(s.customerId)&& (flag.WAIT_TRANSFER.equals(s.flag))) {
                 studentNames.add(s.orderId);
                     check = 123;
                 }

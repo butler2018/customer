@@ -38,7 +38,7 @@ public class OpenOrder extends AppCompatActivity {
         ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
         for (order s : MainActivity.odao.getList()) {
            // if(ID.equals(s.customerId)&& (s.flag.equals(flag.OPEN_ORDER))) {
-            if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
+            if(ID.equals(s.customerId)&& (flag.OPEN_ORDER.equals(s.flag))) {
                 studentNames.add(s.orderId);
                 check = 123;
             }

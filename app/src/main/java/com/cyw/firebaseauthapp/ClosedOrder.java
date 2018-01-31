@@ -38,7 +38,7 @@ public class ClosedOrder extends AppCompatActivity {
         ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
         for (order s : MainActivity.odao.getList()) {
           //  if(ID.equals(s.customerId)&& (flag.CLOSED_ORDER.equals(s.flag))) {
-                if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
+                if(ID.equals(s.customerId)&& (flag.CLOSED_ORDER.equals(s.flag))) {
                 studentNames.add(s.orderId);
                     check = 123;
                 }

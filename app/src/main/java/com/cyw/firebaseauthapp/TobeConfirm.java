@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.cyw.firebaseauthapp.Data.flag;
 import com.cyw.firebaseauthapp.order.order;
 
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class TobeConfirm extends AppCompatActivity {
         ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
         for (order s : MainActivity.odao.getList()) {
             // if(ID.equals(s.customerId)&& (s.flag.equals(flag.OPEN_ORDER))) {
-            if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
+            if(ID.equals(s.customerId)&& (flag.TO_BE_CONFIRM.equals(s.flag))) {
                 studentNames.add(s.orderId);
                 check = 123;
             }
