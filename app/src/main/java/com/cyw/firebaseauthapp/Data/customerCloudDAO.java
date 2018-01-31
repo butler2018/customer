@@ -105,7 +105,7 @@ public customerCloudDAO(final Context context) {
             {
                 t.name = s.name;
                 t.password = s.password;
-                t.store=s.store;
+              //  t.store=s.store;
                 saveFile();
                 return true;
             }

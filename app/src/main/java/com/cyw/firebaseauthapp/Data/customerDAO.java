@@ -122,7 +122,7 @@ public class customerDAO implements customerDAOinterface{
             {
                 t.name = s.name;
                 t.password = s.password;
-                t.store=s.store;
+             //   t.store=s.store;
              //   t.bankcode=s.bankcode;
             //    t.accountNumber=s.accountNumber;
                 saveFile();

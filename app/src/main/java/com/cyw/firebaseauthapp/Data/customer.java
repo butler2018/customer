@@ -9,15 +9,15 @@ public class customer {
     public String id;
     public String name;
     public String password;
-    public String store;
 
 
-    public customer(String id, String name, String password, String store)
+
+    public customer(String id, String name, String password)
     {
         this.id=id;
         this.name=name;
         this.password=password;
-        this.store=store;
+
 
     }
 

@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class OrderActivity extends AppCompatActivity {
 
     ListView lv;
-    String[] str= {"待儲值訂單","未結訂單","已結訂單"};
+    String[] str= {"待儲值訂單","待確認訂單","未結訂單","已結訂單"};
 
 
     String OrderId ;
@@ -41,16 +41,20 @@ public class OrderActivity extends AppCompatActivity {
                 {
 
                     case 0:
-                        Intent it2=new Intent(OrderActivity.this,WaitingMoney.class);
-                        startActivity(it2);
+                        Intent it0=new Intent(OrderActivity.this,WaitingMoney.class);
+                        startActivity(it0);
                         break;
                     case 1:
-                        Intent it3=new Intent(OrderActivity.this,OpenOrder.class);
-                        startActivity(it3);
+                        Intent it1=new Intent(OrderActivity.this,TobeConfirm.class);
+                        startActivity(it1);
                         break;
                     case 2:
-                        Intent it4=new Intent(OrderActivity.this,ClosedOrder.class);
-                        startActivity(it4);
+                        Intent it2=new Intent(OrderActivity.this,OpenOrder.class);
+                        startActivity(it2);
+                        break;
+                    case 3:
+                        Intent it3=new Intent(OrderActivity.this,ClosedOrder.class);
+                        startActivity(it3);
                         break;
                 }
 

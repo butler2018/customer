@@ -32,7 +32,7 @@ public class BasicDataMaintain extends AppCompatActivity {
         ID = sp.getString("id", "");
         mdid.setText(ID);
         mdname.setText(MainActivity.dao.getCustomer(ID).name.toString());
-        mdstore.setText(MainActivity.dao.getCustomer(ID).store.toString());
+       // mdstore.setText(MainActivity.dao.getCustomer(ID).store.toString());
 
 
 
@@ -46,7 +46,7 @@ public class BasicDataMaintain extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         MainActivity.dao.getCustomer(ID).name=mdname.getText().toString();
-                        MainActivity.dao.getCustomer(ID).store=mdstore.getText().toString();
+                  //      MainActivity.dao.getCustomer(ID).store=mdstore.getText().toString();
 
 
 

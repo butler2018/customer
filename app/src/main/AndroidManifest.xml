@@ -52,7 +52,9 @@
         <activity android:name=".Open2Activity" />
         <activity android:name=".AddtestActivity" />
         <activity android:name=".Waiting2Money" />
-        <activity android:name=".Closed2Order"></activity>
+        <activity android:name=".Closed2Order" />
+        <activity android:name=".TobeConfirm" />
+        <activity android:name=".Tobe2Confirm"></activity>
     </application>
 
 </manifest>

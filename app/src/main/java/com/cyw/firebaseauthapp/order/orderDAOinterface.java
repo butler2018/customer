@@ -13,7 +13,7 @@ public interface orderDAOinterface {
     public ArrayList<order> getList();
     //抓取一個物件
     public order getOrder(String id);
-    //更新一個物件
+
     public boolean update(order s);
     //刪除一個物件
  //   public boolean delete(String customerId);

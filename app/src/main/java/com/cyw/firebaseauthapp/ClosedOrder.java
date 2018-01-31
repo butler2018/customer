@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.cyw.firebaseauthapp.Data.flag;
 import com.cyw.firebaseauthapp.order.order;
 
 import java.util.ArrayList;
@@ -17,7 +19,8 @@ public class ClosedOrder extends AppCompatActivity {
     ListView lv;
     String ID;
     String Mode = "CLOSED_ORDER";
-
+    TextView tv;
+    int check;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,21 +37,28 @@ public class ClosedOrder extends AppCompatActivity {
         super.onResume();
         ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
         for (order s : MainActivity.odao.getList()) {
-            if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
+          //  if(ID.equals(s.customerId)&& (flag.CLOSED_ORDER.equals(s.flag))) {
+                if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
                 studentNames.add(s.orderId);
-            }
+                    check = 1;
+                }
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(ClosedOrder.this
-                , android.R.layout.simple_list_item_1,studentNames );
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent it = new Intent(ClosedOrder.this,Closed2Order.class);
-                it.putExtra("OrderId", MainActivity.odao.getList().get(position).orderId);
-                startActivity(it);
-            }
-        });
+        if(check != 1) {
+            tv = findViewById(R.id.closedtextView);
+            tv.setText("未搜尋到訂單");
+        }else {
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(ClosedOrder.this
+                    , android.R.layout.simple_list_item_1, studentNames);
+            lv.setAdapter(adapter);
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                    Intent it = new Intent(ClosedOrder.this, Open2Activity.class);
+                    it.putExtra("OrderId", MainActivity.odao.getList().get(position).orderId);
+                    startActivity(it);
+                }
+            });
+        }
     }
 
 }

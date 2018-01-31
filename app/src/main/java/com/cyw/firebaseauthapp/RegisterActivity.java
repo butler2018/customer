@@ -15,7 +15,7 @@ import com.cyw.firebaseauthapp.Data.customer;
 //註冊畫面
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText id,name,password,store;//,bankCode,bankAccount;
+    EditText id,name,password;//,bankCode,bankAccount;
     Button registerSubmit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
         id=(EditText)findViewById(R.id.pwdid);
         name=(EditText)findViewById(R.id.name);
         password=(EditText)findViewById(R.id.password);
-        store=(EditText)findViewById(R.id.store);
+      //  store=(EditText)findViewById(R.id.store);
       // bankCode= null;//(EditText)findViewById(R.id.bankCode);
       // bankAccount= null;//(EditText)findViewById(R.id.bankAccount);
 
@@ -43,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
                     builder.setPositiveButton("確認送出", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            MainActivity.dao.add(new customer(id.getText().toString(),  name.getText().toString(), password.getText().toString(),store.getText().toString()));
+                            MainActivity.dao.add(new customer(id.getText().toString(),  name.getText().toString(), password.getText().toString()));
                             //bankCode.getText().toString(), bankAccount.getText().toString()
                             //將ID寫入ShaerdPref,供後續使用
                             SharedPreferences sp = getSharedPreferences("basicdata", MODE_PRIVATE);

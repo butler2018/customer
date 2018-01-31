@@ -83,6 +83,7 @@ public orderCloudDAO(final Context context) {
     @Override
     public order getOrder(String id) {
 
+
         for (order s : mylist1)
         {
             if (s.orderId.equals(id))
@@ -92,6 +93,18 @@ public orderCloudDAO(final Context context) {
         }
         return null;
     }
+
+//    @Override
+//    public order getOrder(int id) {
+//        for (order s : mylist1)
+//        {
+//            if (s.orderId.equals(id))
+//            {
+//                return s;
+//            }
+//        }
+//        return null;
+//    }
 
 
     @Override
