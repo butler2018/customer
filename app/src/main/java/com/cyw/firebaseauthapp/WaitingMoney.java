@@ -48,19 +48,43 @@ public class WaitingMoney extends AppCompatActivity {
             tv.setText("未搜尋到訂單");
         }else
             {
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(WaitingMoney.this
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(WaitingMoney.this
                     , android.R.layout.simple_list_item_1, studentNames);
-            lv.setAdapter(adapter);
-            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                lv.setAdapter(adapter);
+                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        Intent it=new Intent(WaitingMoney.this,WaitingMoney_detail.class);
+                       // String OID=wMoneyList.get(i).toString();
+                      //  it.putExtra("OrderID",orderId);
+                        it.putExtra("OrderId", MainActivity.odao.getList().get(position).orderId);
+                        startActivity(it);
+                    }
+                });
 
-                    Intent it = new Intent(WaitingMoney.this, Waiting2Money.class);
-                    it.putExtra("OrderId", MainActivity.odao.getList().get(position).orderId);
 
-                    startActivity(it);
-                }
-            });
+
+
+
+
+
+
+
+
+
+//            ArrayAdapter<String> adapter = new ArrayAdapter<String>(WaitingMoney.this
+//                    , android.R.layout.simple_list_item_1, studentNames);
+//            lv.setAdapter(adapter);
+//            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+//
+//                    Intent it = new Intent(WaitingMoney.this, Waiting2Money.class);
+//                    it.putExtra("OrderId", MainActivity.odao.getList().get(position).orderId);
+//
+//                    startActivity(it);
+//                }
+//            });
         }
     }
 

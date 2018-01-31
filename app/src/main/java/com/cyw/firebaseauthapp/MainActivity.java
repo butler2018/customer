@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.cyw.firebaseauthapp.Data.DBtype;
 import com.cyw.firebaseauthapp.Data.customerCloudDAO;
+import com.cyw.firebaseauthapp.Master.masterCloudDAO;
+import com.cyw.firebaseauthapp.Program.rogramCloudDAO;
 import com.cyw.firebaseauthapp.order.orderCloudDAO;
 
 //登入至師父主畫面(MasterActivity),及註冊按鈕至(RegisterActity)
@@ -22,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     EditText id,password;
     public static customerCloudDAO dao;
     public static orderCloudDAO odao;
-
+    public static rogramCloudDAO pdao;
+    public static masterCloudDAO mdao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         dao = new customerCloudDAO(MainActivity.this);
         odao = new orderCloudDAO(MainActivity.this);
+        pdao = new rogramCloudDAO(MainActivity.this);
+        mdao = new masterCloudDAO(MainActivity.this);
 
         login_btn = (Button) findViewById(R.id.login_btn);
         register_btn = (Button) findViewById(R.id.register_btn);

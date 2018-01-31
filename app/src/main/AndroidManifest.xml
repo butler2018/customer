@@ -54,7 +54,8 @@
         <activity android:name=".Waiting2Money" />
         <activity android:name=".Closed2Order" />
         <activity android:name=".TobeConfirm" />
-        <activity android:name=".Tobe2Confirm"></activity>
+        <activity android:name=".Tobe2Confirm" />
+        <activity android:name=".WaitingMoney_detail"></activity>
     </application>
 
 </manifest>

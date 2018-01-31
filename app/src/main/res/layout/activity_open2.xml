@@ -36,7 +36,7 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/textView34"
+        android:id="@+id/textVieww34"
         android:layout_width="95dp"
         android:layout_height="40dp"
         android:layout_alignStart="@+id/textView32"
@@ -49,15 +49,15 @@
         android:layout_width="230dp"
         android:layout_height="40dp"
         android:layout_alignStart="@+id/textViewMid"
-        android:layout_alignTop="@+id/textView34"
+        android:layout_alignTop="@+id/textVieww34"
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/textView36"
+        android:id="@+id/textVieww36"
         android:layout_width="95dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/textView34"
-        android:layout_below="@+id/textView34"
+        android:layout_alignStart="@+id/textVieww34"
+        android:layout_below="@+id/textVieww34"
         android:text="尚餘次數"
         android:textSize="20sp" />
 
@@ -71,11 +71,11 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textView38"
+        android:id="@+id/textVieww38"
         android:layout_width="95dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/textView36"
-        android:layout_below="@+id/textView36"
+        android:layout_alignStart="@+id/textVieww36"
+        android:layout_below="@+id/textVieww36"
         android:text="服務次數:"
         android:textSize="20sp" />
 
