@@ -40,10 +40,10 @@ public class OpenOrder extends AppCompatActivity {
            // if(ID.equals(s.customerId)&& (s.flag.equals(flag.OPEN_ORDER))) {
             if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
                 studentNames.add(s.orderId);
-                check = 1;
+                check = 123;
             }
         }
-        if(check != 1) {
+        if(check != 123) {
             tv = findViewById(R.id.opentextView);
             tv.setText("未搜尋到訂單");
         }else

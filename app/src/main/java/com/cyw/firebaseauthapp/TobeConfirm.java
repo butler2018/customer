@@ -20,50 +20,52 @@ public class TobeConfirm extends AppCompatActivity {
     int check;
     ListView lv;
     TextView tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tobe_confirm);
-        lv = (ListView) findViewById(R.id.waitlistView);
+        lv = (ListView) findViewById(R.id.tobelistView);
         //取得ID
         SharedPreferences sp = getSharedPreferences("basicdata", MODE_PRIVATE);
         ID = sp.getString("id", "");
-//       //final master masterinfo = MainActivity.dao_m.getMaster(masterID);
+
     }
+
     @Override
     protected void onResume() {   //回此頁顯示項目
         super.onResume();
         ArrayList<String> studentNames = new ArrayList<String>(); // 讀陣列
         for (order s : MainActivity.odao.getList()) {
-            //if(ID.equals(s.customerId)&& (flag.WAIT_TRANSFER.equals(s.flag))) {
-            if (ID.equals(s.customerId) && (Mode.equals(s.flag))) {
+            // if(ID.equals(s.customerId)&& (s.flag.equals(flag.OPEN_ORDER))) {
+            if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
                 studentNames.add(s.orderId);
-                check = 1;
+                check = 123;
             }
         }
-        if (check != 1) {
-            tv = findViewById(R.id.tobetextView);
+        if(check != 123) {
+            tv = findViewById(R.id.opentextView);
             tv.setText("未搜尋到訂單");
-        } else
+        }else
         {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(TobeConfirm.this
                     , android.R.layout.simple_list_item_1, studentNames);
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+            lv.setAdapter(adapter);
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                    Intent it = new Intent(TobeConfirm.this, Tobe2Confirm.class);
 
-                Intent it = new Intent(TobeConfirm.this, Tobe2Confirm.class);
-                it.putExtra("OrderId", MainActivity.odao.getList().get(position).orderId);
+                    it.putExtra("OrderId", MainActivity.odao.getList().get(position).orderId);
 
-                startActivity(it);
-            }
-        });
-    }
+
+                    startActivity(it);
+                }
+            });
+        }
     }
 
 }
-
 
 
 

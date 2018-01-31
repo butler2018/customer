@@ -40,10 +40,10 @@ public class ClosedOrder extends AppCompatActivity {
           //  if(ID.equals(s.customerId)&& (flag.CLOSED_ORDER.equals(s.flag))) {
                 if(ID.equals(s.customerId)&& (Mode.equals(s.flag))) {
                 studentNames.add(s.orderId);
-                    check = 1;
+                    check = 123;
                 }
         }
-        if(check != 1) {
+        if(check != 123) {
             tv = findViewById(R.id.closedtextView);
             tv.setText("未搜尋到訂單");
         }else {

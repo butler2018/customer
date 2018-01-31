@@ -41,11 +41,15 @@ public class WaitingMoney_detail extends AppCompatActivity {
         payCash_wmd=(Button)findViewById(R.id.payCash_wmd);
         deleteOrder_wmd=(Button)findViewById(R.id.deleteOrder_wmd);
 
-        OID=getIntent().getStringExtra("OrderID");
+
+
+        OID=getIntent().getStringExtra("OrderId");
         o=MainActivity.odao.getOrder(OID); // orderData **
-        SharedPreferences sp = getSharedPreferences("basicdata", MODE_PRIVATE);
-        MID = sp.getString("id", "");
-        m=MainActivity.mdao.getMaster(MID); // masterData
+
+//        SharedPreferences sp = getSharedPreferences("basicdata", MODE_PRIVATE);
+//        MID = sp.getString("id", "");
+
+        m=MainActivity.mdao.getMaster(o.masterId); // masterData
         v=MainActivity.dao.getCustomer(o.customerId);  //VipData
 
         orderId_wmd.setText(OID);
