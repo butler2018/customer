@@ -148,7 +148,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textVieww37" />
 
     <TextView
-        android:id="@+id/textVieww34"
+        android:id="@+id/retextVieww34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -167,11 +167,11 @@
         android:layout_marginTop="8dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textVieww34"
+        app:layout_constraintStart_toEndOf="@+id/retextVieww34"
         app:layout_constraintTop_toBottomOf="@+id/times__wmd" />
 
     <TextView
-        android:id="@+id/textVieww36"
+        android:id="@+id/retextVieww36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -179,7 +179,7 @@
         android:text="銀行帳號"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textVieww34" />
+        app:layout_constraintTop_toBottomOf="@+id/retextVieww34" />
 
     <TextView
         android:id="@+id/bankAccount__wmd"
@@ -190,7 +190,7 @@
         android:layout_marginTop="8dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textVieww36"
+        app:layout_constraintStart_toEndOf="@+id/retextVieww36"
         app:layout_constraintTop_toBottomOf="@+id/bankCode__wmd" />
 
     <TextView
@@ -233,10 +233,10 @@
         android:text="匯款期限"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textVieww36" />
+        app:layout_constraintTop_toBottomOf="@+id/retextVieww36" />
 
     <TextView
-        android:id="@+id/textVieww38"
+        android:id="@+id/retextVieww38"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -279,7 +279,7 @@
         android:layout_marginTop="8dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textVieww38"
+        app:layout_constraintStart_toEndOf="@+id/retextVieww38"
         app:layout_constraintTop_toBottomOf="@+id/VIPId__wmd" />
 
     <TextView

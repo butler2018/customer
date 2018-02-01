@@ -3,7 +3,6 @@ package com.cyw.firebaseauthapp;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.cyw.firebaseauthapp.Data.customer;
@@ -20,11 +19,11 @@ public class Open2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open2);
-        tvOid = findViewById(R.id.textViewOid);
-        tvMid = findViewById(R.id.textViewMid);
+        tvOid = findViewById(R.id.retextViewOid);
+        tvMid = findViewById(R.id.retextViewMid);
         tvPn = findViewById(R.id.textViewPn);
         tvSt = findViewById(R.id.textViewSt);
-        tvBt = findViewById(R.id.textViewBt);
+        tvBt = findViewById(R.id.retextViewBt);
 
         OID=getIntent().getStringExtra("OrderID");  // o訂單no
 

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cyw.firebaseauthapp.Open2Activity">
-
+    tools:context="com.cyw.firebaseauthapp.reservation2Activity">
     <TextView
         android:id="@+id/retextViewOid"
         android:layout_width="230dp"
@@ -45,12 +44,12 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textViewPn "
+        android:id="@+id/retextViewPn "
         android:layout_width="230dp"
         android:layout_height="40dp"
         android:layout_alignStart="@+id/retextViewMid"
         android:layout_alignTop="@+id/retextVieww34"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/retextVieww36"
@@ -65,8 +64,8 @@
         android:id="@+id/retextViewBt"
         android:layout_width="230dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/textViewPn "
-        android:layout_below="@+id/textViewPn "
+        android:layout_alignStart="@+id/retextViewPn "
+        android:layout_below="@+id/retextViewPn "
         android:text="TextView"
         android:textSize="20sp" />
 
@@ -90,12 +89,22 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textViewSt"
+        android:id="@+id/retextViewSt"
         android:layout_width="230dp"
         android:layout_height="40dp"
         android:layout_alignStart="@+id/retextViewBt"
         android:layout_below="@+id/retextViewBt"
         android:text="TextView"
         android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/retextVieww38"
+        android:layout_below="@+id/retextVieww38"
+        android:layout_marginTop="39dp"
+        android:onClick="clickre"
+        android:text="結帳" />
 
 </RelativeLayout>
