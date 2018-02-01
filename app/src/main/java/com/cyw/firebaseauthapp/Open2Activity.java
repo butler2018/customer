@@ -36,7 +36,7 @@ public class Open2Activity extends AppCompatActivity {
         m=MainActivity.mdao.getMaster(o.masterId);
         v=MainActivity.dao.getCustomer(o.customerId);
 
-        Log.d("id::",OID);
+      //  Log.d("id::",OID);
         tvOid.setText(o.orderId);
         tvMid.setText(m.name);
         tvPn.setText(String.valueOf(o.programID));
