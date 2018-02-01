@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/customer.iml" filepath="$PROJECT_DIR$/customer.iml" />
-      <module fileurl="file://C:\java\android\customer\customer.iml" filepath="C:\java\android\customer\customer.iml" />
       <module fileurl="file://C:\Users\vivian\AndroidStudioProjects\customer\.idea\customer.iml" filepath="C:\Users\vivian\AndroidStudioProjects\customer\.idea\customer.iml" />
     </modules>
   </component>

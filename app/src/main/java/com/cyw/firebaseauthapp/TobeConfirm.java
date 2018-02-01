@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.cyw.firebaseauthapp.Data.flag;
 import com.cyw.firebaseauthapp.order.order;
 
 import java.util.ArrayList;

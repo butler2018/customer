@@ -14,7 +14,9 @@ public interface orderDAOinterface {
     //抓取一個物件
     public order getOrder(String id);
 
-    public boolean update(order o);
+    public order getMaster(String id1,String id2);
+
+      public boolean update(order o);
     //刪除一個物件
  //   public boolean delete(String customerId);
 }

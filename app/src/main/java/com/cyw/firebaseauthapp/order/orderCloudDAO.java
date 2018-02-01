@@ -93,6 +93,20 @@ public orderCloudDAO(final Context context) {
         }
         return null;
     }
+    @Override
+    public order getMaster(String id1,String id2) {
+
+
+        for (order o : mylist1)
+        {
+            if (o.customerId.equals(id1)&& o.orderId.equals(id2))
+            {
+                return o;
+            }
+        }
+        return null;
+    }
+
 
 //    @Override
 //    public order getOrder(int id) {
