@@ -25,7 +25,6 @@ public class WaitingMoney extends AppCompatActivity {
     flag check;
     ArrayList<order> orderList;
     ArrayList<String> wMoneyList;
-    ArrayList<String> wMoneyList1;
     Myadapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +36,7 @@ public class WaitingMoney extends AppCompatActivity {
         customerID = sp.getString("id", "");
         orderList=MainActivity.odao.getList();
         wMoneyList=new ArrayList<>();
-   //     wMoneyList1=new ArrayList<>();
+
    }
     @Override
     protected void onResume() {   //回此頁顯示項目
@@ -69,9 +68,7 @@ public class WaitingMoney extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Intent it=new Intent(WaitingMoney.this,WaitingMoney_detail.class);
                         String OID=wMoneyList.get(i).toString();
-               //         String MID=wMoneyList1.get(i).toString();
                         it.putExtra("OrderID",OID);
-                //        it.putExtra("MasterId",MID);
                         startActivity(it);
                     }
                 });
