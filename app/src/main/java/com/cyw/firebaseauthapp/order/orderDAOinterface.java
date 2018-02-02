@@ -18,5 +18,5 @@ public interface orderDAOinterface {
 
       public boolean update(order o);
     //刪除一個物件
- //   public boolean delete(String customerId);
+    public boolean delete(String id);
 }

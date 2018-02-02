@@ -3,6 +3,7 @@ package com.cyw.firebaseauthapp;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.cyw.firebaseauthapp.Data.customer;
@@ -43,4 +44,18 @@ public class Open2Activity extends AppCompatActivity {
         tvBt.setText(String.valueOf(o.balanceTimes));
 
     }
+    public void clickDD(View v)
+    {
+        MainActivity.odao.delete(OID);
+        finish();
+    }
+
+    public void clickcf(View v)
+    {
+        o.flag= "OPEN_ORDER";
+        MainActivity.odao.update(o);
+        finish();
+    }
+
+
 }

@@ -137,21 +137,19 @@ public orderCloudDAO(final Context context) {
             return false;
         }
 
-//        @Override
-//        public boolean delete(String id)
-//
-//    {
-//        for (order s : mylist1)
-//        {
-//            if (s.customerId.equals(id))
-//            {
-//                mylist1.remove(s);
-//                saveFile();
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
+    @Override
+    public boolean delete(String id) {
+        for (order s : mylist1)
+        {
+            if (s.orderId.equals(id))
+            {
+                mylist1.remove(s);
+                saveFile();
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     }

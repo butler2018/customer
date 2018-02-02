@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class CustomerActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button customerData,orderData,reservationData,btn4,btn5,btn6;
+    Button customerData,orderData,reservationData,CheckoutData,btn5,btn6;
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
@@ -16,13 +16,13 @@ public class CustomerActivity extends AppCompatActivity implements View.OnClickL
         customerData=(Button)findViewById(R.id.customerData);
         orderData=(Button)findViewById(R.id.orderData);
         reservationData=(Button)findViewById(R.id.reservationData);
-     //   btn4=(Button)findViewById(R.id.store);
+        CheckoutData=(Button)findViewById(R.id.CheckoutData);
         btn5=(Button)findViewById(R.id.btn5);
         btn6=(Button)findViewById(R.id.btn6);
         customerData.setOnClickListener(this);
         orderData.setOnClickListener(this);
         reservationData.setOnClickListener(this);
-//        btn4.setOnClickListener(this);
+        CheckoutData.setOnClickListener(this);
         btn5.setOnClickListener(this);
         btn6.setOnClickListener(this);
 
@@ -41,7 +41,7 @@ public class CustomerActivity extends AppCompatActivity implements View.OnClickL
                 Intent it2=new Intent(CustomerActivity.this,OrderActivity.class);
                 startActivity(it2);
                 break;
-            case R.id.reservationData:
+            case R.id.CheckoutData:
                 Intent it3=new Intent(CustomerActivity.this,reservationActivity.class);
                 startActivity(it3);
                 break;
