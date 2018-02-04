@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -77,6 +79,8 @@ public class reservation2Activity extends AppCompatActivity {
         builder.setTitle("結帳確認密碼");
         builder.setMessage("按確認將扣除1次服務");
         final EditText et = new EditText(reservation2Activity.this);
+       // et.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        et.setTransformationMethod(PasswordTransformationMethod.getInstance()); //設定輸入為密碼方式
         builder.setView(et);
 
         builder.setPositiveButton("確認送出", new DialogInterface.OnClickListener() {
@@ -86,27 +90,21 @@ public class reservation2Activity extends AppCompatActivity {
                 if(chkpsd.equals("")) {
                     Toast.makeText(reservation2Activity.this, "請輸入密碼,不能空白喔~", Toast.LENGTH_SHORT).show();
                 }else if (chkpsd.equals(v.password)) {
-
+                    //儲值-1,服務+1
                     o.balanceTimes = ((Integer.valueOf(o.balanceTimes))-1);
                     o.serviceTimes = ((Integer.valueOf(o.serviceTimes))+1);
-
+                    // 狀態變更 若服務次數 = 0 ,
                     if(o.balanceTimes ==0)
                     {
                         o.flag= "CLOSED_ORDER";
                     }
-
-
-                    MainActivity.odao.update(o);
+                 MainActivity.odao.update(o);
                     Toast.makeText(reservation2Activity.this, "扣除成功", Toast.LENGTH_LONG).show();
                     finish();
                 }else
                 {
                     Toast.makeText(reservation2Activity.this, "密碼不正確,請修改重新輸入!!", Toast.LENGTH_SHORT).show();
-                }
-
-
-
-            }
+                }       }
 
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -141,11 +139,3 @@ public class reservation2Activity extends AppCompatActivity {
 //            }
 //        });
 //        builder.create().show();
-
-
-
-
-
-
-
-

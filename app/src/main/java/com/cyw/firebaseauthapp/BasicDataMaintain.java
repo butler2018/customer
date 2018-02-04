@@ -25,7 +25,7 @@ public class BasicDataMaintain extends AppCompatActivity {
         mdsubmit=(Button) findViewById(R.id.pwdsubmit);
         mdid=(TextView)findViewById(R.id.pwdid);
         mdname =(EditText) findViewById(R.id.mdName);
-        mdstore =(EditText) findViewById(R.id.mdstore);
+      //  mdstore =(EditText) findViewById(R.id.mdstore);
 
 
         SharedPreferences sp = getSharedPreferences("basicdata", MODE_PRIVATE);
