@@ -61,20 +61,20 @@ public class reservation2Activity extends AppCompatActivity {
             Toast.makeText(reservation2Activity.this, "儲值異常,請通知師父", Toast.LENGTH_SHORT).show();
         }else if(o.balanceTimes >=1)
         {
-        showDialog_3();
+            checkOut();
         }
     }
-    public void clickdelete(View v)
-    {
-        MainActivity.odao.delete(OID);
-        finish();
+//    public void clickdelete(View v)
+//    {
+//        MainActivity.odao.delete(OID);
+//        finish();
+//
+//
+//    }
 
 
-    }
 
-
-
-    private void showDialog_3() {
+    private void checkOut() {
         AlertDialog.Builder builder = new AlertDialog.Builder(reservation2Activity.this);
         builder.setTitle("結帳確認密碼");
         builder.setMessage("按確認將扣除1次服務");

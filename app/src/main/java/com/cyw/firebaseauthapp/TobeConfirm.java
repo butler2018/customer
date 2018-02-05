@@ -1,7 +1,10 @@
 package com.cyw.firebaseauthapp;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cyw.firebaseauthapp.order.flag;
 import com.cyw.firebaseauthapp.order.order;
@@ -28,6 +32,8 @@ public class TobeConfirm extends AppCompatActivity {
     ArrayList<String> tcList;
     TobeConfirm.Myadapter adapter;
     flag check;
+    public static final String PACKAGE_NAME = "jp.naver.line.android";
+    public static final String CLASS_NAME = "jp.naver.line.android.activity.selectchat.SelectChatActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +61,9 @@ public class TobeConfirm extends AppCompatActivity {
                 //Log.d("order","抓的"+orderList.get(i).customerId.toString()+"原本:"+customerID);
                 tcList.add(orderList.get(i).orderId);
                 //      wMoneyList1.add(orderList.get(i).orderId);
+                check = flag.FIND;
             }
-            check = flag.FIND;
+
         }
         if(check != flag.FIND) {
             tv = findViewById(R.id.tobetextView);
@@ -110,4 +117,9 @@ public class TobeConfirm extends AppCompatActivity {
             return v;
         }
     }
-}
+
+
+    }
+
+
+

@@ -54,8 +54,9 @@ public class reservationActivity extends AppCompatActivity {
                 //Log.d("order","抓的"+orderList.get(i).customerId.toString()+"原本:"+customerID);
                 reList.add(orderList.get(i).orderId);
                 //      wMoneyList1.add(orderList.get(i).orderId);
+                check = flag.FIND;
             }
-            check = flag.FIND;
+
         }
         if (check != flag.FIND) {
             tv = findViewById(R.id.reservationtextView);

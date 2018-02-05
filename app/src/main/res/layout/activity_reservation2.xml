@@ -109,14 +109,4 @@
         android:text="結帳"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/retextViewSt"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="14dp"
-        android:onClick="clickdelete"
-        android:text="Delete(test)" />
-
 </RelativeLayout>
