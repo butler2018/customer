@@ -43,7 +43,7 @@
             android:text="儲值" />
 
         <Button
-            android:id="@+id/btn5"
+            android:id="@+id/store"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"

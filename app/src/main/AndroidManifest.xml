@@ -56,7 +56,9 @@
         <activity android:name=".Tobe2Confirm" />
         <activity android:name=".WaitingMoney_detail" />
         <activity android:name=".reservationActivity" />
-        <activity android:name=".reservation2Activity"></activity>
+        <activity android:name=".reservation2Activity" />
+        <activity android:name=".StoreLoc" />
+        <activity android:name=".StoreMap"></activity>
     </application>
 
 </manifest>
