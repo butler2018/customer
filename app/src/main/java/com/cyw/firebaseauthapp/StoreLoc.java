@@ -7,6 +7,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -46,7 +47,7 @@ public class StoreLoc extends AppCompatActivity{
         setContentView(R.layout.activity_store_loc);
         lm = (LocationManager) getSystemService(LOCATION_SERVICE);
         tv = (TextView) findViewById(R.id.textViewNow);
-        listener = new MyListener();
+        listener = new MyListener();  //於頁面顯示現在地址
 
         lv1 = (ListView) findViewById(R.id.store_listView);
         adapter = new Myadapter();
@@ -60,10 +61,22 @@ public class StoreLoc extends AppCompatActivity{
         lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent it = new Intent(StoreLoc.this, StoreMap.class);
-                String[] fromto = {nowLocation, stores.get(i).address};
-                it.putExtra("fromto", fromto);
-                startActivity(it);
+//                Intent it = new Intent(StoreLoc.this, StoreMap.class);
+                  String[] fromto = {nowLocation, stores.get(i).address};
+//                it.putExtra("fromto", fromto);
+//                startActivity(it);
+
+
+                String vDirectionUrl = "https://maps.google.com/maps?f=d"
+                        + "&saddr=" + fromto[0]
+                        + "&daddr=" + fromto[1]
+                        + "&hl=tw";
+
+                // 在 Google 地圖 App 顯示導航
+                Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse(vDirectionUrl) );
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                startActivity(intent);
+
             }
         });
     }
@@ -161,7 +174,7 @@ public class StoreLoc extends AppCompatActivity{
             float dist = location.distanceTo(loc101);
             Log.d("LOC", "Dist:" + dist);
 
-            Geocoder geocoder = new Geocoder(StoreLoc.this, Locale.TRADITIONAL_CHINESE);
+            Geocoder geocoder = new Geocoder(StoreLoc.this, Locale.TRADITIONAL_CHINESE);//設定語言
             lm.removeUpdates(listener);
             //Geocoder gc = new Geocoder(getActivity(), Locale.TRADITIONAL_CHINESE);
             try {
@@ -169,7 +182,7 @@ public class StoreLoc extends AppCompatActivity{
                 Address addr = mylist.get(0);
                 add = addr.getAddressLine(0);
                 Log.d("LOC", addr.getAddressLine(0));
-                tv.setText(String.valueOf(add));
+                tv.setText(String.valueOf(add)); // 地址放入
             } catch (IOException e) {
                 e.printStackTrace();
             }
